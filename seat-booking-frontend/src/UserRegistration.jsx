@@ -10,7 +10,7 @@ export default function UserRegistration(props){
         // console.log("Username :", userName);
         // console.log("Useremail :", userEmail);
         try{
-            let response = await fetch("http://localhost:8080/api/v1/auth/register", {
+            let response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/v1/auth/register`, {
                             method : "POST",
                             headers : {"Content-Type" : "application/json"},
                             body : JSON.stringify({name : userName, email : userEmail})
